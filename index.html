@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Sahibul Musa Sium - Audio Autoplay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#0f172a;
+            color:white;
+            font-family:Arial, sans-serif;
+            text-align:center;
+        }
+        button{
+            padding:12px 20px;
+            font-size:16px;
+            border:none;
+            border-radius:6px;
+            background:#22c55e;
+            color:#000;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>🔊 Welcome Sahibul Musa Sium</h2>
+        <p>পেজ খুললেই অডিও অটো প্লে হবে</p>
+        <button onclick="audio.pause()">⏸ Stop Audio</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="audio" autoplay loop>
+        <source src="ringtone.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById("audio");
+
+        // মোবাইল ব্রাউজারের জন্য fallback
+        document.addEventListener("click", () => {
+            audio.play();
+        }, { once: true });
+    </script>
+
+</body>
+</html>
